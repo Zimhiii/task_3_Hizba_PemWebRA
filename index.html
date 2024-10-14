@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hizba Jaisy Muhammad - Dark Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      main {
+        display: flex;
+        justify-content: space-evenly;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+        background-color: #121212;
+        color: #e0e0e0;
+        line-height: 1.6;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      nav {
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(30, 30, 30, 0.95);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+      }
+
+      .nav-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+      }
+
+      .brand {
+        font-family: "Playfair Display", serif;
+        font-size: 24px;
+        font-weight: 700;
+        color: #e0e0e0;
+        text-decoration: none;
+        letter-spacing: 2px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 20px;
+      }
+
+      nav a {
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 400;
+        color: #e0e0e0;
+        transition: color 0.3s ease;
+      }
+
+      nav a:hover {
+        color: #bb86fc;
+      }
+
+      section {
+        padding: 80px 0;
+      }
+
+      #Profil {
+        width: 60%;
+        text-align: center;
+        /* background: linear-gradient(to right, #494949, #131313); */
+        display: flex;
+        padding: 0px;
+        flex-direction: row;
+      }
+
+      .profile-img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 30px;
+        overflow: hidden;
+        border: 5px solid #1a1a1a;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .profile-img img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Playfair Display", serif;
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        font-size: 36px;
+        color: #e0e0e0;
+      }
+
+      h2 {
+        font-size: 24px;
+        color: #bb86fc;
+      }
+
+      h3 {
+        font-size: 18px;
+        color: #888888;
+      }
+
+      .bio {
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: 18px;
+        text-align: justify;
+        color: #cccccc;
+      }
+
+      .bio::first-letter {
+        font-size: 48px;
+        font-weight: 700;
+        color: #bb86fc;
+        float: left;
+        margin-right: 10px;
+        line-height: 1;
+      }
+
+      .bg-profile {
+        background: linear-gradient(to right, #7d7d7d, #262626);
+        max-width: 1200px;
+        padding: 40px;
+        margin: 0 auto;
+        /* padding: 0 20px; */
+      }
+
+      #Github {
+        /* background-color: #2a2a2a; */
+        color: #fff;
+        text-align: center;
+        justify-content: center;
+        align-content: center;
+        /* background-color: #262626; */
+        /* background: linear-gradient(to right, #262626, #000000); */
+        background: linear-gradient(to right, #262626, #000000 50%);
+      }
+
+      .github-link {
+        display: inline-block;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 15px 30px;
+        border-radius: 30px;
+        background: linear-gradient(135deg, #bb86fc, #3700b3);
+        color: #fff;
+        text-decoration: none;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .github-link:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+      }
+
+      #Keahlian {
+        background-color: #000000;
+        width: 40%;
+      }
+
+      .skills-title {
+        text-align: center;
+        margin-bottom: 40px;
+        color: #e0e0e0;
+      }
+
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+      }
+
+      .skill {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        height: 150px;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #292929, #3a3a3a);
+        color: #e0e0e0;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .skill:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+      }
+
+      @media (max-width: 768px) {
+        .nav-content {
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        .nav-links {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        h1 {
+          font-size: 28px;
+        }
+
+        h2 {
+          font-size: 20px;
+        }
+
+        main {
+          flex-direction: row;
+        }
+        #Keahlian {
+          width: 100%;
+        }
+
+        .bg-profile {
+          background: linear-gradient(to right, #7d7d7d, #262626);
+          padding: 40px;
+        }
+
+        #Github {
+          background: linear-gradient(to right, #7d7d7d, #262626);
+        }
+
+        #Keahlian {
+          background-color: #000000;
+          background: linear-gradient(to right, #262626, #000000);
+
+          width: 40%;
+        }
+
+        h3 {
+          font-size: 16px;
+        }
+
+        .bio {
+          font-size: 16px;
+        }
+
+        .skill {
+          width: 120px;
+          height: 120px;
+          font-size: 16px;
+        }
+
+        #Profil {
+          display: flex;
+          width: 100%;
+          height: 100%;
+          padding: 0px;
+          flex-direction: column;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .profile-img {
+          width: 150px;
+          height: 150px;
+        }
+
+        .bg-profile {
+          background: linear-gradient(to bottom, #7d7d7d, #262626);
+          padding: 40px;
+        }
+
+        #Github {
+          background: linear-gradient(to bottom, #262626, #000000 50%);
+        }
+
+        main {
+          flex-direction: column;
+        }
+
+        .skill {
+          width: 100px;
+          height: 100px;
+          font-size: 14px;
+        }
+        #Profil {
+          display: flex;
+          flex-direction: column;
+        }
+
+        #Keahlian {
+          background: linear-gradient(to right, #000000, #000000);
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="container nav-content">
+        <a href="#" class="brand">HIZBAAA</a>
+        <div class="nav-links">
+          <a href="#Profil"><span>Profil</span></a>
+          <a href="#Github">GitHub</a>
+          <a href="#Keahlian">Keahlian</a>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <section id="Profil">
+        <div class="bg-profile">
+          <div class="profile-img">
+            <h1>X</h1>
+            <h3><b>Web Developer and Mobile Developer</b></h3>
+          </div>
+          <h1>Hizba Jaisy Muhammad</h1>
+          <h2>122140148</h2>
+          <p class="bio">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur.
+          </p>
+        </div>
+        <section id="Github">
+          <div class="container">
+            <a
+              href="https://github.com/Zimhiii"
+              target="_blank"
+              class="github-link"
+              >Explore My GitHub</a
+            >
+          </div>
+        </section>
+      </section>
+      <section id="Keahlian">
+        <div class="container">
+          <h2 class="skills-title">Keahlian Yang Saya Miliki</h2>
+          <div class="skills">
+            <div class="skill">C++</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">Kotlin</div>
+            <div class="skill">Dart</div>
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">Tailwind</div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
